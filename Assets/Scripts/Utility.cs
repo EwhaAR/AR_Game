@@ -19,7 +19,7 @@ public class Utility
     // 화면 위치, Raycast 성공 시 결과 값을 out 파라미터로 받음
     public static bool Raycast(Vector2 screenPosition, out Pose pose)
     {
-        if (raycastManager.Raycast(screenPosition, hits, TrackableType.All)) // Raycast 수행
+        if (raycastManager.Raycast(screenPosition, hits, TrackableType.AllTypes)) // Raycast 수행
         {
             pose = hits[0].pose; // 결과값 중 첫 번째 오브젝트의 Pose 값을 반환
             return true; // Raycast 성공
