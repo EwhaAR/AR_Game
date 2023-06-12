@@ -11,7 +11,7 @@ public class ImageLibrary : MonoBehaviour
 
     [SerializeField]
     private GameObject[] uiObjects; // 각 이미지에 대응하는 비활성화된 UI 게임 오브젝트들을 저장할 배열
-    private Dictionary<string, GameObject> spawnedUis = new Dictionary<string, GameObject>(); // 추적하고 있는 이미지와 연결된 게임 오브젝트들을 담는 딕셔너리
+    private List<GameObject> spawnedUis = new List<GameObject>(); // 추적하고 있는 이미지와 연결된 게임 오브젝트들을 담는 리스트
     private HashSet<string> detectedImages = new HashSet<string>(); // 이미지를 인식한 이미지의 이름을 저장하는 집합
 
     //fadein,out 관련
@@ -44,10 +44,28 @@ public class ImageLibrary : MonoBehaviour
     private void UpdateImage(ARTrackedImage trackedImage)
     {
         string name = trackedImage.referenceImage.name; // 추적 중인 이미지의 이름을 가져옴
-        GameObject trackedUi = spawnedUis[name]; // 추적 중인 이미지와 연결된 UI를 가져옴
-        CanvasGroup canvasGroup = trackedUi.GetComponent<CanvasGroup>();
-
-        StartCoroutine(FadeIn(canvasGroup, 5f)); // 페이드 인 코루틴 실행
+        if (detectedImages.Contains(name))
+        {
+            int index = trackedImage.trackableId.GetHashCode(); // 이미지의 trackableId를 이용하여 인덱스 결정
+            if (index >= 0 && index < uiObjects.Length)
+            {
+                GameObject trackedUi = uiObjects[index]; // 인덱스에 해당하는 UI 오브젝트를 가져옴
+                CanvasGroup canvasGroup = trackedUi.GetComponent<CanvasGroup>();
+                StartCoroutine(FadeIn(canvasGroup, 5f)); // 페이드 인 코루틴 실행
+            }
+        }
+        else
+        {
+            detectedImages.Add(name); // 이미지 이름을 detectedImages 집합에 추가
+            int index = detectedImages.Count - 1; // 이미지의 순서에 따라 UI 오브젝트 인덱스를 결정
+            if (index >= 0 && index < uiObjects.Length)
+            {
+                GameObject trackedUi = Instantiate(uiObjects[index], trackedImage.transform); // 인덱스에 해당하는 UI 오브젝트를 생성하고 연결
+                spawnedUis.Add(trackedUi);
+                CanvasGroup canvasGroup = trackedUi.GetComponent<CanvasGroup>();
+                StartCoroutine(FadeIn(canvasGroup, 5f)); // 페이드 인 코루틴 실행
+            }
+        }
     }
 
     private IEnumerator FadeIn(CanvasGroup canvasGroup, float waitTime)

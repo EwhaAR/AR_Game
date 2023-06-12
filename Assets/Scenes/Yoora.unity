@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1444,7 +1444,7 @@ GameObject:
   - component: {fileID: 383529672}
   - component: {fileID: 383529674}
   m_Layer: 5
-  m_Name: "\uC0DD\uD611"
+  m_Name: store
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2086,7 +2086,7 @@ GameObject:
   - component: {fileID: 894831176}
   - component: {fileID: 894831178}
   m_Layer: 5
-  m_Name: "\uACF5\uB3C4"
+  m_Name: lib
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2536,7 +2536,7 @@ GameObject:
   - component: {fileID: 1008415360}
   - component: {fileID: 1008415362}
   m_Layer: 5
-  m_Name: "\uD559\uC0DD\uD68C\uC2E4"
+  m_Name: student
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3140,7 +3140,7 @@ GameObject:
   - component: {fileID: 1339285990}
   - component: {fileID: 1339285992}
   m_Layer: 5
-  m_Name: "\uAC15\uB2F9"
+  m_Name: hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3829,7 +3829,7 @@ GameObject:
   - component: {fileID: 1717946946}
   - component: {fileID: 1717946948}
   m_Layer: 5
-  m_Name: "\uC544\uC0B0\uCABD\uBB38"
+  m_Name: asan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3919,7 +3919,7 @@ GameObject:
   - component: {fileID: 1738675190}
   - component: {fileID: 1738675192}
   m_Layer: 5
-  m_Name: "\uC9D5\uACF5\uB2E4\uB9AC"
+  m_Name: bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4009,7 +4009,7 @@ GameObject:
   - component: {fileID: 1745179165}
   - component: {fileID: 1745179167}
   m_Layer: 5
-  m_Name: "\uC61B\uB0A0\uACFC\uBC29"
+  m_Name: comroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4180,7 +4180,7 @@ MonoBehaviour:
   m_FocusMode: -1
   m_LightEstimationMode: -1
   m_AutoFocus: 1
-  m_LightEstimation: 1
+  m_LightEstimation: 0
   m_FacingDirection: 1
 --- !u!114 &1769424509
 MonoBehaviour:
@@ -4381,7 +4381,7 @@ GameObject:
   - component: {fileID: 1842658676}
   - component: {fileID: 1842658678}
   m_Layer: 5
-  m_Name: "VR\uB8F8"
+  m_Name: vr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4471,7 +4471,7 @@ GameObject:
   - component: {fileID: 1973842642}
   - component: {fileID: 1973842644}
   m_Layer: 5
-  m_Name: "\uD300\uD1A0\uBC29"
+  m_Name: teamarg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5101,7 +5101,7 @@ GameObject:
   - component: {fileID: 2132602061}
   - component: {fileID: 2132602063}
   m_Layer: 5
-  m_Name: "\uD300\uD504\uB85C\uC81D\uD2B8\uC2E4"
+  m_Name: teamproj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

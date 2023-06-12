@@ -14,6 +14,12 @@ public class MiddleStage : MonoBehaviour
 
     private void Update()
     {
+        // 터치 입력을 감지하여 stage 변수 증가
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            stage++;
+        }
+
         if (stage == 2 && !isStage2Activated)
         {
             ActivateRandomPanel(panels.Length);
