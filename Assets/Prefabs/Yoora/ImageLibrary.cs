@@ -11,8 +11,8 @@ public class ImageLibrary : MonoBehaviour
 
     [SerializeField]
     private GameObject[] uiObjects; // 각 이미지에 대응하는 비활성화된 UI 게임 오브젝트들을 저장할 배열
-    private List<GameObject> spawnedUis = new List<GameObject>(); // 추적하고 있는 이미지와 연결된 게임 오브젝트들을 담는 리스트
-    private HashSet<string> detectedImages = new HashSet<string>(); // 이미지를 인식한 이미지의 이름을 저장하는 집합
+    private Dictionary<XRReferenceImage, GameObject> spawnedUis = new Dictionary<XRReferenceImage, GameObject>(); // 추적하고 있는 이미지와 연결된 게임 오브젝트들을 담는 딕셔너리
+    private HashSet<XRReferenceImage> detectedImages = new HashSet<XRReferenceImage>(); // 이미지를 인식한 이미지를 저장하는 집합
 
     //fadein,out 관련
     //fade 시간 inspector에서 설정 가능
@@ -33,9 +33,9 @@ public class ImageLibrary : MonoBehaviour
     {
         foreach (var trackedImage in eventArgs.added)
         {
-            if (!detectedImages.Contains(trackedImage.referenceImage.name))
+            if (!detectedImages.Contains(trackedImage.referenceImage))
             {
-                detectedImages.Add(trackedImage.referenceImage.name); // 이미지 이름을 detectedImages 집합에 추가
+                detectedImages.Add(trackedImage.referenceImage); // 이미지를 detectedImages 집합에 추가
                 UpdateImage(trackedImage); // 이미지 업데이트 함수 호출
             }
         }
@@ -43,10 +43,10 @@ public class ImageLibrary : MonoBehaviour
 
     private void UpdateImage(ARTrackedImage trackedImage)
     {
-        string name = trackedImage.referenceImage.name; // 추적 중인 이미지의 이름을 가져옴
-        if (detectedImages.Contains(name))
+        XRReferenceImage referenceImage = trackedImage.referenceImage; // 추적 중인 이미지의 referenceImage 가져옴
+        if (detectedImages.Contains(referenceImage))
         {
-            int index = trackedImage.trackableId.GetHashCode(); // 이미지의 trackableId를 이용하여 인덱스 결정
+            int index = System.Array.IndexOf(uiObjects, spawnedUis[referenceImage]); // 이미지에 대응하는 UI 오브젝트의 인덱스를 가져옴
             if (index >= 0 && index < uiObjects.Length)
             {
                 GameObject trackedUi = uiObjects[index]; // 인덱스에 해당하는 UI 오브젝트를 가져옴
@@ -56,12 +56,12 @@ public class ImageLibrary : MonoBehaviour
         }
         else
         {
-            detectedImages.Add(name); // 이미지 이름을 detectedImages 집합에 추가
+            detectedImages.Add(referenceImage); // 이미지를 detectedImages 집합에 추가
             int index = detectedImages.Count - 1; // 이미지의 순서에 따라 UI 오브젝트 인덱스를 결정
             if (index >= 0 && index < uiObjects.Length)
             {
                 GameObject trackedUi = Instantiate(uiObjects[index], trackedImage.transform); // 인덱스에 해당하는 UI 오브젝트를 생성하고 연결
-                spawnedUis.Add(trackedUi);
+                spawnedUis.Add(referenceImage, trackedUi);
                 CanvasGroup canvasGroup = trackedUi.GetComponent<CanvasGroup>();
                 StartCoroutine(FadeIn(canvasGroup, 5f)); // 페이드 인 코루틴 실행
             }
