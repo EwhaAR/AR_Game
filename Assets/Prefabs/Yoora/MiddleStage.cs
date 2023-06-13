@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class MiddleStage : MonoBehaviour
 {
-    public CanvasGroup[] panels; // UI ÆÐ³ÎµéÀ» ´ãÀ» ¹è¿­
+    public CanvasGroup[] panels; // UI ï¿½Ð³Îµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½è¿­
 
-    private int stage = 0; // ÇöÀç ½ºÅ×ÀÌÁö º¯¼ö
-    private bool isStage2Activated = false; // stage 2¿¡¼­ È°¼ºÈ­µÈ ÆÐ³Î ¿©ºÎ È®ÀÎÀ» À§ÇÑ º¯¼ö
+    private int stage = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private bool isStage2Activated = false; // stage 2ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½Ð³ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    private float fadeTime = 1f; // ÆäÀÌµå ½Ã°£ ¼³Á¤
-    private float accumTime; // °æ°ú ½Ã°£
+    private float fadeTime = 1f; // ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½
+    private float accumTime; // ï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
     private void Update()
     {
-        // ÅÍÄ¡ ÀÔ·ÂÀ» °¨ÁöÇÏ¿© stage º¯¼ö Áõ°¡
+        // ï¿½ï¿½Ä¡ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ stage ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+        // #JES: Use mouse in Unity Editor
+        #if UNITY_EDITOR
+        if(Input.GetMouseButtonDown(0))  // if mouse left is clicked 
+        {
+            stage++;
+            Debug.Log("Stage " + stage);
+        }
+        #else
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             stage++;
         }
+        #endif
 
         if (stage == 2 && !isStage2Activated)
         {
@@ -34,18 +44,18 @@ public class MiddleStage : MonoBehaviour
 
     private void ActivateRandomPanel(int panelCount, int excludedPanelIndex = -1)
     {
-        // ¸ðµç ÆÐ³Î ºñÈ°¼ºÈ­
+        // ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½ ï¿½ï¿½È°ï¿½ï¿½È­
         foreach (CanvasGroup panel in panels)
         {
             panel.alpha = 0f;
         }
 
-        // È°¼ºÈ­ÇÒ ÆÐ³Î ÀÎµ¦½º
+        // È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½Ð³ï¿½ ï¿½Îµï¿½ï¿½ï¿½
         int panelIndex;
 
         if (excludedPanelIndex != -1)
         {
-            // Á¦¿ÜÇÒ ÆÐ³Î ÀÎµ¦½º¸¦ Á¦¿ÜÇÏ°í ·£´ýÇÑ ÆÐ³Î È°¼ºÈ­
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½ ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½ È°ï¿½ï¿½È­
             panelIndex = Random.Range(0, excludedPanelIndex);
             if (panelIndex >= excludedPanelIndex)
             {
@@ -54,11 +64,11 @@ public class MiddleStage : MonoBehaviour
         }
         else
         {
-            // ¸ðµç ÆÐ³Î Áß ·£´ýÇÑ ÆÐ³Î È°¼ºÈ­
+            // ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½ È°ï¿½ï¿½È­
             panelIndex = Random.Range(0, panelCount);
         }
 
-        // ¼±ÅÃÇÑ ÆÐ³Î¿¡ FadeIn ¾Ö´Ï¸ÞÀÌ¼Ç ½ÇÇà
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð³Î¿ï¿½ FadeIn ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½ï¿½ï¿½ï¿½
         CanvasGroup selectedPanel = panels[panelIndex];
         StartCoroutine(FadeIn(selectedPanel, 0f));
     }
@@ -74,7 +84,7 @@ public class MiddleStage : MonoBehaviour
         // Gradually fade in
         while (accumTime < fadeTime)
         {
-            canvasGroup.alpha = Mathf.Lerp(originalAlpha, targetAlpha, accumTime / fadeTime); // ÆäÀÌµå ÀÎ ¾Ö´Ï¸ÞÀÌ¼Ç
+            canvasGroup.alpha = Mathf.Lerp(originalAlpha, targetAlpha, accumTime / fadeTime); // ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½
             yield return null;
             accumTime += Time.deltaTime;
         }
@@ -84,7 +94,7 @@ public class MiddleStage : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         // Call the FadeOut coroutine
-        StartCoroutine(FadeOut(canvasGroup)); // ÆäÀÌµå ¾Æ¿ô ÄÚ·çÆ¾ ½ÇÇà
+        StartCoroutine(FadeOut(canvasGroup)); // ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Æ¿ï¿½ ï¿½Ú·ï¿½Æ¾ ï¿½ï¿½ï¿½ï¿½
     }
 
     private IEnumerator FadeOut(CanvasGroup canvasGroup)
@@ -97,7 +107,7 @@ public class MiddleStage : MonoBehaviour
         // Gradually fade out
         while (accumTime < fadeTime)
         {
-            canvasGroup.alpha = Mathf.Lerp(originalAlpha, targetAlpha, accumTime / fadeTime); // ÆäÀÌµå ¾Æ¿ô ¾Ö´Ï¸ÞÀÌ¼Ç
+            canvasGroup.alpha = Mathf.Lerp(originalAlpha, targetAlpha, accumTime / fadeTime); // ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Æ¿ï¿½ ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½
             yield return null;
             accumTime += Time.deltaTime;
         }
