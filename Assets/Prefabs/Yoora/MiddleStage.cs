@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
 
 public class MiddleStage : MonoBehaviour
 {
@@ -20,9 +18,6 @@ public class MiddleStage : MonoBehaviour
     private int gameStage;
     private int stageStep;
     public GameSceneManager gameSceneManager;
-
-    public ARTrackedImageManager trackedImageManager;
-    private bool imageRecognized = false;
 
 
 
@@ -46,32 +41,33 @@ public class MiddleStage : MonoBehaviour
         // ��ġ �Է��� �����Ͽ� stage ���� ����
 
         // #JES: Use mouse in Unity Editor
-        if (Input.GetMouseButtonDown(0))  // if mouse left is clicked 
-{
-
-            if (imageRecognized)
-            {
-                imageRecognized = false;
-                // 이미지가 인식되었을 경우 stage 변수 변경
-                dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
-                gameSceneManager.convertScene();
-            }
-}
-
-        // If image perception succeeded 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        #if UNITY_EDITOR
+        if(Input.GetMouseButtonDown(0))  // if mouse left is clicked 
         {
+            int gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+            dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
+            // Debug.Log("Stage: " + dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage);
 
-            if (imageRecognized)
-            {
-                imageRecognized = false;    
-                // 이미지가 인식되었을 경우 stage 변수 변경
-                dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
-                gameSceneManager.convertScene();
-            }
+            gameSceneManager.convertScene();   
+
         }
 
+        #else
+        // If image perception succeded 
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            int gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+            dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
+            // if(dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage < 4)
+            // {
+            //     dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage++;
+            // }
+            // Debug.Log("Stage: " + dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage);
 
+            gameSceneManager.convertScene();   
+
+        }
+        #endif
 
 
         if (gameStage == 2 && !isStage2Activated)
@@ -125,29 +121,6 @@ public class MiddleStage : MonoBehaviour
         CanvasGroup selectedPanel = panels[panelIndex];
         StartCoroutine(FadeIn(selectedPanel, 0f));
     }
-
-    private void OnEnable()
-    {
-        trackedImageManager.trackedImagesChanged += OnTrackedImagesChanged; // 이미지 추적 상태 변화 이벤트에 대한 핸들러 등록
-    }
-
-    private void OnDisable()
-    {
-        trackedImageManager.trackedImagesChanged -= OnTrackedImagesChanged; // 이미지 추적 상태 변화 이벤트 핸들러 제거
-    }
-
-    private void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
-    {
-        foreach (var trackedImage in eventArgs.added)
-        {
-
-            imageRecognized = true;
-
-        }
-    }
-
-  
-
 
     private IEnumerator FadeIn(CanvasGroup canvasGroup, float waitTime)
     {

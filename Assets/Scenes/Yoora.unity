@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028353, g: 0.22571383, b: 0.30692253, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 21451255}
   - component: {fileID: 21451254}
   m_Layer: 5
-  m_Name: "\uC2DD\uB2F9"
+  m_Name: "\uC61B\uB0A0\uACFC\uBC29"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -743,7 +743,6 @@ MonoBehaviour:
   - {fileID: 24941309}
   - {fileID: 268523269}
   gameSceneManager: {fileID: 392510023}
-  trackedImageManager: {fileID: 1157059713}
 --- !u!1 &206787133
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 195, y: 826}
+  m_AnchoredPosition: {x: 81, y: -390}
   m_SizeDelta: {x: 986.5734, y: 416.956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280990699
@@ -936,14 +935,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCABD\uBB38 \uC720\uB9AC\uBB38\uC73C\uB85C \uAC78\uC5B4\uB4E4\uC5B4\uC624\uBA74\n\uC26C\uB294
-    \uC2DC\uAC04\uB9C8\uB2E4 \uC2DC\uB044\uB7EC\uC6CC\uC9C0\uB294 \uACF3\uC774\n\uD55C\uAD70\uB370
-    \uC788\uC5B4!\n\uC544\uC0B0\uACF5\uD559\uAD00\uC5D0\uB294 \uC788\uC9C0\uB9CC\n\uC2E0\uACF5\uD559\uAD00\uC5D0\uB294
-    \uC5C6\uC5B4!\n\uB9D0\uC744 \uB9CE\uC774 \uD588\uB354\uB2C8 \uBAA9\uC774 \uB9C8\uB974\uAD70~\n\uC2DC\uC6D0\uD55C
-    \uC74C\uB8CC\uC218\uB098 \uD55C\uC794 \uB9C8\uC154\uC57C \uD558\uB098?"
+  m_text: Go To Store!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -974,7 +969,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1003,7 +998,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -396.16364, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1569,9 +1564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb8dda5a7ee0499c9cb9204a3d5fd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dontDestroy: {fileID: 0}
-  gameStage: 0
-  stageStep: 0
 --- !u!4 &392510024
 Transform:
   m_ObjectHideFlags: 0
@@ -1904,7 +1896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 171, y: 483}
+  m_AnchoredPosition: {x: 171, y: -137}
   m_SizeDelta: {x: 1054.4885, y: 422.499}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745694911
@@ -1927,13 +1919,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2E0\uACF5\uD559\uAD00 \uC9C0\uD558 2\uCE35\uC5D0 \uC788\uB294\n\uC774\uACF3\uC740
-    \uACF5\uB300\uC0DD\uC758 \uCE74\uD398\uB77C\uACE0\uB3C4\n\uD560 \uC218 \uC788\uB294
-    \uACF3\uC774\uC9C0!\n\uD654\uC5EC\uB2C8\uB4E4\uC740 \uC774\uACF3\uC5D0\uC11C
-    \uACFC\uC81C, \uD300\uD50C, \uD734\uC2DD \uB4F1 \uB2E4\uC591\uD558\uAC8C \uC774\uC6A9\uD55C\uB2E4\uAD6C!"
+  m_text: Go To Team Debate Room!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1964,7 +1953,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1993,7 +1982,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -333.2204, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2492,7 +2481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19, y: 175}
+  m_AnchoredPosition: {x: -19, y: -218}
   m_SizeDelta: {x: 1222.3721, y: 456.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998719896
@@ -2515,13 +2504,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2E0\uACF5\uD559\uAD00 \uC9C0\uD5582\uCE35\uC5D0 \uC788\uC5B4!\n\uC8FC\uBCC0\uC5D0
-    \uBCF5\uD569\uAE30\uAC00 \uC815\uB9D0 \uB9CE\uC544!\n\uAD50\uC218\uB2D8\uB4E4\uB3C4
-    \uC790\uC8FC \uC624\uC2DC\uACE0 \uD559\uC0DD\uB4E4\uB3C4 \uC790\uC8FC\uC624\uB294
-    \uACF3\uC774\uC57C"
+  m_text: Go To Computer Engineering Room!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2720,7 +2706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34, y: 280}
+  m_AnchoredPosition: {x: -12, y: -180}
   m_SizeDelta: {x: 986.5734, y: 416.956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035815235
@@ -2743,13 +2729,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC2E0\uACF5\uD559\uAD00 \uC9C0\uD558 2\uCE35\uC5D0 \uC788\uACE0 \uC2E4\uBB3C\n\uD559\uC0DD\uCE74\uB4DC\uB97C
-    \uCC0D\uC5B4\uC57C \uB4E4\uC5B4\uAC08 \uC218 \uC788\uC5B4.\n\uACF5\uB300 \uAD00\uB828
-    \uD589\uC0AC\uB97C \uB9CE\uC774 \uCC38\uC5EC\uD55C\n\uD654\uC5EC\uB2C8\uB4E4\uC740
-    \uC790\uC8FC \uB4E4\uB800\uC744 \uAC83 \uAC19\uC740 \uACF3\uC774\uC57C!"
+  m_text: Go To Student Council Room!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2809,7 +2792,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -192.58963, y: 0, z: -269.16125, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3566,7 +3549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190, y: 445}
+  m_AnchoredPosition: {x: 81, y: -390}
   m_SizeDelta: {x: 986.5734, y: 416.956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1590296008
@@ -3589,14 +3572,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC774\uACF3\uC740 \uC2E0\uACF5\uD559\uAD00 2\uCE35\uC5D0 \uC788\uC5B4.\n\uBC14\uB85C
-    \uC55E\uC5D0 \uD654\uC5EC\uB2C8\uB4E4\uC774 \uB530\uB85C\n\uACF5\uBD80\uD560
-    \uC218 \uC788\uB294 \uACF5\uAC04\uB3C4 \uB9C8\uB828\uB418\uC5B4 \uC788\uC5B4.\n\uC774\uACF3\uC73C\uB85C
-    \uB4E4\uC5B4\uAC00\uAE30 \uC804\uC5D0\uB294\n\uD559\uC0DD\uC99D\uC744 \uAF2D
-    \uC900\uBE44\uD558\uB3C4\uB85D \uD574~"
+  m_text: Go To Engineering Library!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3627,7 +3606,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3656,7 +3635,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -410.94568, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3795,7 +3774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52, y: 643}
+  m_AnchoredPosition: {x: 2, y: -395}
   m_SizeDelta: {x: 1267.1372, y: 416.956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643193767
@@ -3818,14 +3797,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uACF5\uB300\uC5D0 \uAD6C\uB984\uB2E4\uB9AC\uAC00 \uC5B4\uB518\uC9C0 \uBAA8\uB978\uB2E4\uAD6C?\n\uC5F0\uD611
-    \uC0B0\uD611\uB3C4 \uCC98\uC74C \uB4E4\uC5B4\uBCF8\uB2E4\uAD6C?\n\uC6B0\uC120
-    \uC2E0\uACF5\uD559\uAD00 \uCABD \uC5D8\uB808\uBCA0\uC774\uD130\uB97C \uD0C0\uACE0
-    \uC2E0\uACF5\uD559\uAD00 4\uCE35\uC73C\uB85C \uC774\uB3D9!\n\uC5D8\uB808\uBCA0\uC774\uD130\uC5D0\uC11C
-    \uB0B4\uB9B0 \uD6C4\n\uBC14\uB85C \uC624\uB978\uCABD\uC73C\uB85C \uAC78\uC5B4\uAC00\uBD10!"
+  m_text: Go To Overpass Bridge!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3856,7 +3831,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3885,7 +3860,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -126.05054, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4351,7 +4326,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -244, y: 626}
+  m_AnchoredPosition: {x: 81, y: -390}
   m_SizeDelta: {x: 986.5734, y: 416.956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1777569910
@@ -4374,14 +4349,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC544\uC0B0\uACF5\uD559\uAD00\uC5D0 \uB4E4\uC5B4\uC640\uC11C\n\uACC4\uB2E8\uC73C\uB85C
-    \uCB49 \uB0B4\uB824\uAC00\uB2E4 \uBCF4\uBA74\n\uB9CC\uB098\uB294 \uAC15\uC758\uC2E4\uC774\uC57C.\n\uAC15\uC758\uC2E4
-    \uC548\uC5D0 \uD070 TV\uB3C4 \uC788\uC5B4.\n\uACF5\uB300\uC5D0\uC11C \uBC8C\uB808\uAC00
-    \uAC00\uC7A5 \uB9CE\uC774\n\uB098\uC624\uB294 \uAC15\uC758\uC2E4\uC774\uAE30\uB3C4
-    \uD558\uC9C0\u2026\u315C"
+  m_text: Go To Engineering Hall!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4412,7 +4383,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4441,7 +4412,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -482.2058, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4805,7 +4776,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -99, y: 419}
+  m_AnchoredPosition: {x: -12, y: -211}
   m_SizeDelta: {x: 986.5734, y: 416.956}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2082092848
@@ -4828,13 +4799,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC5EC\uAE30\uB294 \uC544\uC0B0\uACF5\uD559\uAD00 1\uCE35\uC5D0 \uC788\uC5B4.\n\uBB38\uC740
-    \uCCA0\uBB38\uC73C\uB85C \uB418\uC5B4\uC788\uACE0\n\uBC29 \uC18D\uC5D0 \uBC29\uC774
-    \uC5EC\uB7EC\uAC1C \uC788\uC5B4.\n\uC544 \uCC38! \uD654\uC5EC\uB2C8\uB4E4\uC740
-    \uC774\uBC88\uD559\uAE30 \uD300\uD50C\uC774 \uBA87 \uAC1C\uC57C?"
+  m_text: Go To Team Project Room!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4894,7 +4862,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -208.00244, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
