@@ -41,20 +41,20 @@ public class GameSceneManager : MonoBehaviour
                 // 1.2. Intro Scene
                 case 2:
                     dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
-                    // GoToIntrox2);
-                    SceneManager.LoadScene("Intro_bckup");  
-   
+                    GoToIntro(2);   
                     break;                 
                 // 1.3. Minigame
                 case 3:
-                    StartMinigame(gameStage);
+                    // StartMinigame(gameStage);
+                    StartMinigame(1);
+
                     break;
                 // 1.4. Intro Scene
                 case 4: 
                     dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep = 1;
                     dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage++;
-                    // GoToIntro(3);
-                    SceneManager.LoadScene("Intro_bckup");  
+                    GoToIntro(3);
+                    // SceneManager.LoadScene("Intro3");  
 
                     break;                 
             }

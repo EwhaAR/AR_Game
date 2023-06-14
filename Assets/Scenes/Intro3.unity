@@ -985,12 +985,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bg1: {fileID: 1369733761}
   bg2: {fileID: 1369733761}
-  pictureGuide: {fileID: 1369733761}
-  dialogue1: {fileID: 456411117}
-  dialogue2: {fileID: 456411118}
+  pictureGuide: {fileID: 2100957897}
+  dialogue1: {fileID: 456411118}
+  dialogue2: {fileID: 456411117}
   dialogue3: {fileID: 456411116}
   dialogueTrigger: {fileID: 1561359794}
 --- !u!114 &456411116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456411113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c4580f297272d4782b0699b622d918, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  info: []
+--- !u!114 &456411117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1007,27 +1020,14 @@ MonoBehaviour:
     sentence: "\uCA5D\uCA5D.. \uACE0\uB9C8\uC6CC. \uD654\uC5EC\uB2C8\uB97C \uCC3E\uB294
       \uB370 \uB3C4\uC6C0\uC774 \uB418\uB294 \uCABD\uC9C0\uB97C \uC904\uAC8C"
     bubbleType: 3
-    clip: {fileID: 0}
-    transform: {x: 0, y: 0}
+    clip: {fileID: 913533310}
+    transform: {x: 0, y: 200}
   - name: 
     sentence: "\uBD09\uC6D0\uC774\uAC00 \uC900 \uCABD\uC9C0\uB97C \uC774\uC6A9\uD574
       \uACF5\uB300 \uC548\uC5D0 \uC788\uB294 \uD654\uC5EC\uB2C8\uB97C \uCC3E\uC544\uBCF4\uC138\uC694!"
     bubbleType: 1
-    clip: {fileID: 0}
+    clip: {fileID: 913533310}
     transform: {x: 0, y: 0}
---- !u!114 &456411117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456411113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39c4580f297272d4782b0699b622d918, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  info: []
 --- !u!114 &456411118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1053,6 +1053,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb8dda5a7ee0499c9cb9204a3d5fd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dontDestroy: {fileID: 0}
+  gameStage: 0
+  stageStep: 0
 --- !u!1 &472487855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &472487856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2394,7 +2397,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.18926424, g: 0.41509432, b: 0.02114628, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3304,7 +3307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1369733762
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5717,19 +5720,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC544\uC0B0\uACF5\uD559\uAD00 1\uCE35\uC5D0 \uC788\uB294 \uCABD\uBB38\uC73C\uB85C
-    \uC774\uB3D9\uD55C \uD6C4, \n\uCE74\uBA54\uB77C \uBAA8\uB4DC\uC5D0\uC11C \uC544\uC0B0\uACF5\uD559\uAD00
-    \uD604\uD310\uC744 \uCC0D\uC73C\uC138\uC694."
+  m_text: "\uBD09\uC6D0\uC774\uAC00 \uBC25\uC744 \uBA39\uC2B5\uB2C8\uB2E4. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
-  m_sharedMaterial: {fileID: 1327510084722843351, guid: c9931cb29e9c14644a98c5b5413e6eb6, type: 2}
+  m_sharedMaterial: {fileID: 1343881626619104671, guid: dc0f18afa5b8c714d9d013be0c8318cf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4283533170
-  m_fontColor: {r: 0.44677782, g: 0.5283019, b: 0.31598434, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5785,7 +5786,7 @@ MonoBehaviour:
   m_margin: {x: -3.5997999, y: 0, z: 0, w: 101.89642}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2128617739
