@@ -9,23 +9,43 @@ public class ARPlacement_yw : MonoBehaviour
     public GameObject arObjectToSpawn;
     public GameObject placementIndicator;
     public GameObject shoot;
+    public GameSceneManager gameSceneManager;
+
+    public GameObject dontDestroy;
+    public int gameStage;
+    public int stageStep;
+
 
     private GameObject spawnedObject;
     private Pose PlacementPose;
     private ARRaycastManager aRRaycastManager;
     private bool placementPoseIsValid = false;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
         aRRaycastManager = FindObjectOfType<ARRaycastManager>();
         shoot.SetActive(false); //Shooting should not be activated until the spider is spawned
+
+        gameSceneManager = FindObjectOfType<GameSceneManager>();
+
+        dontDestroy = GameObject.Find("DontDestroy");
+        gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+        stageStep = dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep;
+
     }
 
     // Update is called once per frame
     // need to update placement indicator, placement pose and spawn
     void Update()
     {
+        #if UNITY_EDITOR
+        if(Input.GetMouseButtonDown(0))  // if mouse left is clicked 
+            gameSceneManager.convertScene();   
+        #endif
+
         if (spawnedObject == null && placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             ARPlaceObject();

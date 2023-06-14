@@ -7,7 +7,7 @@ using System.Collections;
 public class ScoreManager : MonoBehaviour
 {
     private int currentScore = 0;
-    private int targetScore = 5;
+    private int targetScore = 1;
     private Text scoreText;
 
     private void Awake()
@@ -40,7 +40,7 @@ public class ScoreManager : MonoBehaviour
     {
         if(currentScore >= targetScore)
         {
-            GameObject.Find("ESGameManager").GetComponent<MinigameManager>().showGameoverPanel();
+            GameObject.Find("ESGameManager").GetComponent<MinigameManager>().endMinigame();
         }
     }
 }

@@ -10,23 +10,23 @@ using System.Collections.Generic;
 public class DialogueSystem : MonoBehaviour
 {
 
-    public GameObject translucentBubble; // ¹ÝÅõ¸í ¸»Ç³¼±
-    public GameObject greenBubble; // ÃÊ·Ï ¸»Ç³¼±
-    public GameObject thinkingBubble; // »ý°¢ ¸»Ç³¼± 
-    public GameObject speechBubble; //  ºÀ¿øÀÌ¿ë ¸»Ç³¼± 
+    public GameObject translucentBubble; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç³ï¿½ï¿½
+    public GameObject greenBubble; // ï¿½Ê·ï¿½ ï¿½ï¿½Ç³ï¿½ï¿½
+    public GameObject thinkingBubble; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç³ï¿½ï¿½ 
+    public GameObject speechBubble; //  ï¿½ï¿½ï¿½ï¿½ï¿½Ì¿ï¿½ ï¿½ï¿½Ç³ï¿½ï¿½ 
     private Dialogue DialogueInfo; 
     private GameObject BeforeMonologueImage;
     Queue<Monologue> dialogues = new Queue<Monologue>();
-    // µñ¼Å³Ê¸® »ý¼º
+    // ï¿½ï¿½Å³Ê¸ï¿½ ï¿½ï¿½ï¿½ï¿½
     Dictionary<int, GameObject> bubbleMap = new Dictionary<int, GameObject>();
-    // ¸»Ç³¼± Å¸ÀÔ (0: ¹ÝÅõ¸í ¹è°æ, 1: ÃÊ·Ï¹è°æ ¾È³»¹®±¸, 2: »ý°¢¸»Ç³, 3: ¸»Ç³¼±)
+    // ï¿½ï¿½Ç³ï¿½ï¿½ Å¸ï¿½ï¿½ (0: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, 1: ï¿½Ê·Ï¹ï¿½ï¿½ ï¿½È³ï¿½ï¿½ï¿½ï¿½ï¿½, 2: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç³, 3: ï¿½ï¿½Ç³ï¿½ï¿½)
 
 
     // Start is called before the first frame update
 
-    private void Start()
+    private void Awake()
     {
-        // µñ¼Å³Ê¸®¿¡ µ¥ÀÌÅÍ Ãß°¡
+        // ï¿½ï¿½Å³Ê¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
         bubbleMap.Add(0, translucentBubble);
         bubbleMap.Add(1, greenBubble);
         bubbleMap.Add(2, thinkingBubble);
@@ -48,7 +48,7 @@ public class DialogueSystem : MonoBehaviour
 
         }
 
-        // Ã¹¹®Àå init 
+        // Ã¹ï¿½ï¿½ï¿½ï¿½ init 
         Next();
        
     }
@@ -70,7 +70,7 @@ public class DialogueSystem : MonoBehaviour
         else
         {
 
-            // ÀÌÀü ´ëÈ­¿¡¼­ È°¼ºÈ­µÈ ÀÌ¹ÌÁö°¡ ÀÖ´Ù¸é Á¦°Å 
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 
             DeactivateAllTxtGui();
 
@@ -92,7 +92,7 @@ public class DialogueSystem : MonoBehaviour
             switch (monologue.bubbleType)
             {
 
-                // ¸»Ç³¼± Á¾·ù¿¡ µû¶ó switch
+                // ï¿½ï¿½Ç³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ switch
                 case 0:
                     translucentBubble.SetActive(true);
                    txtSentence = translucentBubble.GetComponentInChildren<TextMeshProUGUI>();
@@ -122,14 +122,14 @@ public class DialogueSystem : MonoBehaviour
             }
            
            
-            // »çÁø ÀÖÀ¸¸é »çÁøµµ °°ÀÌ È°¼ºÈ­
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­
             if (monologue.clip!=null)
             {
                 monologue.clip.SetActive(true);
                 BeforeMonologueImage = monologue.clip;
             }
 
-            // ¸»Ç³¼± À§Ä¡ Á¶Á¤°ª ÀÖÀ¸¸é ¸»Ç³¼± À§Ä¡ Á¶Á¤
+            // ï¿½ï¿½Ç³ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ç³ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
             if(monologue.transform!=null)
             {
                 Vector2 movement = monologue.transform;
@@ -153,7 +153,16 @@ public class DialogueSystem : MonoBehaviour
       
         DeactivateAllTxtGui();
         IntroGameManager introGameManager = FindObjectOfType<IntroGameManager>();
-  
+        GameSceneManager gameSceneManager = FindObjectOfType<GameSceneManager>();
+
+        // if(gameStage == 1 && stageStep == 1)
+        // {
+        //     IntroGameManager.doesDialogue1End = true;
+        //     introGameManager.Dialogue1End();
+        //     introGameManager.Dialogue2End();
+
+        // }
+
         if (IntroGameManager.doesDialogue1End == false)
         {
             IntroGameManager.doesDialogue1End = true;
@@ -166,7 +175,9 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
-            // ½ºÅ×ÀÌÁö·Î ÀüÈ¯
+            // Convert to minigame scene (throwing food into feed the cat)
+            gameSceneManager.convertScene();
+            
         }
         
 

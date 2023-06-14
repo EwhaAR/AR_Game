@@ -13,42 +13,98 @@ public class MinigameManager : MonoBehaviour
     private Text playerGuideText;
 
 
-    private void Awake()
+    // #JES
+    private GameObject dontDestroy;
+    private int gameStage;
+    private int stageStep;
+
+    GameSceneManager gameSceneManager;
+
+
+
+
+    private void Start()
     {
         // When the scene is loaded, the gameover panel should be invisible
         gameoverPanel = GameObject.Find("Canvas").transform.Find("GameoverPanel").gameObject;
         gameoverPanel.SetActive(false);
 
+
         // Player Guide
         playerGuideText = GameObject.Find("PlayerGuideText").GetComponent<Text>();
+
+        generateGuidelines();
+
+
+        // Stage Info
+        dontDestroy = GameObject.Find("DontDestroy");
+        gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+        stageStep = dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep;
+
+        // Debug.Log("Stage: " + gameStage);
+
+        // Game Scene Manager
+        gameSceneManager = FindObjectOfType<GameSceneManager>();
+
     }
 
-    private void Start()
-    {
-        generateGuidelines();
-    }
 
     public void onClickRestartMinigame()
     {
-        print("RESTART!");
+        Debug.Log("RESTART!");
 
         // Load the minigame scene again
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 
-    public void showGameoverPanel()
+    public void moveStage()
     {
-        print("GAME OVER!");
+
+
+        if(gameStage == 1)
+        {
+            dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep++;
+        }
+        else
+        {
+            dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep=1;
+            dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage++;
+
+        }
+        // Debug.Log("Stage: " + dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage
+        //  + "\n - Step: " + dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep);
+
+        // if(gameStage == 2)
+        //     SceneManager.LoadScene("Intro2");    
+        // else if(gameStage == 3)
+        //     SceneManager.LoadScene("Yoora"); 
+
+
+        gameSceneManager.convertScene();   
+
+    }
+
+    public void endMinigame()
+    {
+        // Debug.Log("GAME OVER!");
 
         gameoverPanel.SetActive(true);
+
+        #if UNITY_EDITOR
+        if(Input.GetMouseButtonDown(0)) 
+        {
+            moveStage();
+        }
+        #else
+        if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) 
+        {
+            moveStage();
+        }
+        #endif
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private void generateGuidelines()
     {

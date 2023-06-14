@@ -13,15 +13,15 @@ public class Mainmenu : MonoBehaviour
     public void onClickNewGame()
     {
         Debug.Log("new game");
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("Intro1");
 
     }
     public void onClickLoad()
     {
         Debug.Log("load");
 
-        SceneManager.LoadScene("Intro");
-        // ÀúÀåµÈ µ¥ÀÌÅÍ°¡ ÀÖ´Ù¸é ºÒ·¯¿À±â
+        SceneManager.LoadScene("Intro1");
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ï¿½ï¿½
     }
     public void onClickSetting()
     {

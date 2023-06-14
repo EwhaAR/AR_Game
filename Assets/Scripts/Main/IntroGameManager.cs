@@ -9,23 +9,45 @@ public class IntroGameManager : MonoBehaviour
     public  GameObject bg2;
     public  GameObject pictureGuide;
 
+    public Dialogue dialogue1;
+    public Dialogue dialogue2;
+    public Dialogue dialogue3;
 
     public static bool doesDialogue1End=false;
     public static bool doesDialogue2End=false;
 
     public DialogueTrigger dialogueTrigger;
 
+
+    // #JES
+    private GameObject dontDestroy;
+    private int gameStage;
+    private int stageStep;
+
     /**
-     * Dialogue1 : ÁÖÀÎ°ø µ¶¹é
-     * Dialogue2 : ¾Æ»ê°øÇÐ°ü µµÂø ~ ¹Ì´Ï°ÔÀÓÀü
-     * Dialogue3 : ¹Ì´Ï°ÔÀÓ ¼º°ø ÈÄ
+     * Dialogue1 : ï¿½ï¿½ï¿½Î°ï¿½ ï¿½ï¿½ï¿½ï¿½
+     * Dialogue2 : ï¿½Æ»ï¿½ï¿½ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ ~ ï¿½Ì´Ï°ï¿½ï¿½ï¿½ï¿½ï¿½
+     * Dialogue3 : ï¿½Ì´Ï°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
      * 
      */
 
     // Start is called before the first frame update
     void Start()
     {
-        dialogueTrigger.Dialogue1Trigger();// ´ëÈ­1 ½ÃÀÛ
+        dontDestroy = GameObject.Find("DontDestroy");
+        gameStage = dontDestroy.GetComponent<DontDestroyOnLoad>().gameStage;
+        stageStep = dontDestroy.GetComponent<DontDestroyOnLoad>().stageStep;
+        // Debug.Log("Stage: " + gameStage);
+
+        // if(stageStep == 1)
+        //     dialogueTrigger.dialogueTrigger(dialogue1);
+        // else if(stageStep == 2)
+        //     dialogueTrigger.dialogueTrigger(dialogue2);
+        // else if(stageStep == 3)
+        //     Dialogue3Start();   
+
+
+        dialogueTrigger.dialogueTrigger(dialogue1);// ï¿½ï¿½È­1 ï¿½ï¿½ï¿½ï¿½
     }
 
    
@@ -36,16 +58,16 @@ public class IntroGameManager : MonoBehaviour
 
     }
 
-    public  void ActivateTakePicture() // picture °¡ÀÌµåÀÇ onClick ÇÔ¼ö¿¡ µî·Ï
+    public  void ActivateTakePicture() // picture ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ onClick ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     {
         pictureGuide.SetActive(false);
 
-        // Ä«¸Þ¶ó ¶ç¿ì±â
+        // Ä«ï¿½Þ¶ï¿½ ï¿½ï¿½ï¿½ï¿½
 
         Debug.Log("ActivateTakePicture");
 
 
-        // »çÁø ÀÎ½ÄµÇ¸é 
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ÄµÇ¸ï¿½ 
 
         var AsanPictureRecognized = true;
 
@@ -56,12 +78,12 @@ public class IntroGameManager : MonoBehaviour
         
     } 
 
-    public void Dialogue2Start() // ¾Æ»ê °øÇÐ°ü ÂÊ¹® µµÂø (Àå¸é ÀüÈ¯)
+    public void Dialogue2Start() // ï¿½Æ»ï¿½ ï¿½ï¿½ï¿½Ð°ï¿½ ï¿½Ê¹ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ ï¿½ï¿½È¯)
     {
 
         bg1.SetActive(false);
         bg2.SetActive(true);
-        dialogueTrigger.Dialogue2Trigger();// ´ëÈ­2 ½ÃÀÛ
+        dialogueTrigger.dialogueTrigger(dialogue2);// ï¿½ï¿½È­2 ï¿½ï¿½ï¿½ï¿½
         Debug.Log("Dialogue2Start");
        
 
@@ -85,7 +107,7 @@ public class IntroGameManager : MonoBehaviour
 
         Debug.Log("FeedTheCatGameStart");
 
-        // Åë°úÇÏ¸é 
+        // ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ 
         var FeedTheCatGamePassed = true;
 
         if (FeedTheCatGamePassed)
@@ -95,11 +117,11 @@ public class IntroGameManager : MonoBehaviour
 
     }
 
-    public void Dialogue3Start() // ¾Æ»ê °øÇÐ°ü ÂÊ¹® µµÂø (Àå¸é ÀüÈ¯)
+    public void Dialogue3Start() // ï¿½Æ»ï¿½ ï¿½ï¿½ï¿½Ð°ï¿½ ï¿½Ê¹ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ ï¿½ï¿½È¯)
     {
 
    
-        dialogueTrigger.Dialogue3Trigger();// ´ëÈ­2 ½ÃÀÛ
+        dialogueTrigger.dialogueTrigger(dialogue3);// ï¿½ï¿½È­2 ï¿½ï¿½ï¿½ï¿½
 
 
 

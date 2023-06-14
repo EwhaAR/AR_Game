@@ -6,27 +6,12 @@ public class DialogueTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public Dialogue dialogue1;
-    public Dialogue dialogue2;
-    public Dialogue dialogue3;
 
-
-    public void Dialogue1Trigger()
+          public void dialogueTrigger(Dialogue dialogue)
     {
         var system = FindObjectOfType<DialogueSystem>();
-        system.Begin(dialogue1);
+        system.Begin(dialogue);
 
     }
-    public void Dialogue2Trigger()
-    {
-        var system = FindObjectOfType<DialogueSystem>();
-        system.Begin(dialogue2);
-
-    }
-    public void Dialogue3Trigger()
-    {
-        var system = FindObjectOfType<DialogueSystem>();
-        system.Begin(dialogue3);
-
-    }
+  
 }
