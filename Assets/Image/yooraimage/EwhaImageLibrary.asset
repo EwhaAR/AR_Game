@@ -21,9 +21,9 @@ MonoBehaviour:
       m_GuidLow: 5390119104049484716
       m_GuidHigh: 9077615403161059216
     m_SerializedTextureGuid:
-      m_GuidLow: 7130503984620745074
-      m_GuidHigh: 451879048105806379
-    m_Size: {x: 1, y: 0.67034936}
+      m_GuidLow: 15471268146626959790
+      m_GuidHigh: 9824221762344961081
+    m_Size: {x: 1, y: 0.4018619}
     m_SpecifySize: 1
     m_Name: vr
     m_Texture: {fileID: 0}
@@ -31,9 +31,9 @@ MonoBehaviour:
       m_GuidLow: 5468119439995133935
       m_GuidHigh: 4628780566369973897
     m_SerializedTextureGuid:
-      m_GuidLow: 4689377669829534086
-      m_GuidHigh: 9804780202056102248
-    m_Size: {x: 1, y: 1.2886053}
+      m_GuidLow: 12286955175126569839
+      m_GuidHigh: 11853026243913561338
+    m_Size: {x: 1, y: 0.4235849}
     m_SpecifySize: 1
     m_Name: hall
     m_Texture: {fileID: 0}
@@ -41,9 +41,9 @@ MonoBehaviour:
       m_GuidLow: 4638923909715145834
       m_GuidHigh: 10513002318078443452
     m_SerializedTextureGuid:
-      m_GuidLow: 17096862619626280100
-      m_GuidHigh: 9071838398700952009
-    m_Size: {x: 1, y: 0.97359735}
+      m_GuidLow: 1991741776405243775
+      m_GuidHigh: 9913196921351240745
+    m_Size: {x: 1, y: 0.35926414}
     m_SpecifySize: 1
     m_Name: lib
     m_Texture: {fileID: 0}
@@ -51,9 +51,9 @@ MonoBehaviour:
       m_GuidLow: 5514256532709014745
       m_GuidHigh: 17965674366758244021
     m_SerializedTextureGuid:
-      m_GuidLow: 5802010007490115234
-      m_GuidHigh: 11942070509351713497
-    m_Size: {x: 1, y: 1.0226736}
+      m_GuidLow: 6414474241103945602
+      m_GuidHigh: 18233705404752776
+    m_Size: {x: 1, y: 0.40841916}
     m_SpecifySize: 1
     m_Name: store
     m_Texture: {fileID: 0}
@@ -61,9 +61,9 @@ MonoBehaviour:
       m_GuidLow: 4871795989307987202
       m_GuidHigh: 16362439200186637983
     m_SerializedTextureGuid:
-      m_GuidLow: 9562480963041115563
-      m_GuidHigh: 13327004278167416747
-    m_Size: {x: 1, y: 0.69264543}
+      m_GuidLow: 8283482054758436874
+      m_GuidHigh: 14232160711541482971
+    m_Size: {x: 1, y: 0.27185914}
     m_SpecifySize: 1
     m_Name: asan
     m_Texture: {fileID: 0}
@@ -71,19 +71,19 @@ MonoBehaviour:
       m_GuidLow: 5673019768192848537
       m_GuidHigh: 11439663931714160273
     m_SerializedTextureGuid:
-      m_GuidLow: 8283354869678832711
-      m_GuidHigh: 12991844942830324488
-    m_Size: {x: 1, y: 1.416803}
+      m_GuidLow: 17407750606404595703
+      m_GuidHigh: 17269417180214091770
+    m_Size: {x: 1, y: 0.998419}
     m_SpecifySize: 1
-    m_Name: comroom
+    m_Name: cafeteria
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5459135525927185158
       m_GuidHigh: 10294049681055401648
     m_SerializedTextureGuid:
-      m_GuidLow: 7783508352803032921
-      m_GuidHigh: 15324201654228623339
-    m_Size: {x: 1, y: 0.7168807}
+      m_GuidLow: 9017352081692986063
+      m_GuidHigh: 7965153778135771801
+    m_Size: {x: 1, y: 1.2946146}
     m_SpecifySize: 1
     m_Name: bridge
     m_Texture: {fileID: 0}
@@ -91,9 +91,9 @@ MonoBehaviour:
       m_GuidLow: 5565083142835966996
       m_GuidHigh: 17595386494003164847
     m_SerializedTextureGuid:
-      m_GuidLow: 4919185966270445527
-      m_GuidHigh: 14877334004930486618
-    m_Size: {x: 1, y: 1.2918986}
+      m_GuidLow: 14899062532924985362
+      m_GuidHigh: 2244121922033332171
+    m_Size: {x: 1, y: 0.4531713}
     m_SpecifySize: 1
     m_Name: teamarg
     m_Texture: {fileID: 0}
@@ -101,9 +101,9 @@ MonoBehaviour:
       m_GuidLow: 5625065461294160615
       m_GuidHigh: 9546841080357145005
     m_SerializedTextureGuid:
-      m_GuidLow: 4414918256194681667
-      m_GuidHigh: 10467286036986927738
-    m_Size: {x: 1, y: 0.7024695}
+      m_GuidLow: 3973578260654616882
+      m_GuidHigh: 4866517272998940393
+    m_Size: {x: 1, y: 0.4106498}
     m_SpecifySize: 1
     m_Name: teamproj
     m_Texture: {fileID: 0}
@@ -111,9 +111,9 @@ MonoBehaviour:
       m_GuidLow: 5691457163387646775
       m_GuidHigh: 2197758032695944893
     m_SerializedTextureGuid:
-      m_GuidLow: 12539373644901266796
-      m_GuidHigh: 18065275243163338459
-    m_Size: {x: 1, y: 1.4220548}
+      m_GuidLow: 11629436125588219160
+      m_GuidHigh: 1741985078194610216
+    m_Size: {x: 1, y: 0.99014974}
     m_SpecifySize: 1
     m_Name: student
     m_Texture: {fileID: 0}
